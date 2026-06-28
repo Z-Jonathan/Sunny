@@ -4,14 +4,21 @@ export function SocialButton({
   variant,
   icon,
   label,
+  onPress,
+  disabled,
 }: {
   variant: "dark" | "light";
   icon: React.ReactNode;
   label: string;
+  onPress?: () => void;
+  disabled?: boolean;
 }) {
   const dark = variant === "dark";
   return (
     <Pressable
+      onPress={onPress}
+      disabled={disabled}
+      style={{ opacity: disabled ? 0.6 : 1 }}
       className={`relative h-[54px] w-full flex-row items-center justify-center rounded-2xl ${
         dark ? "bg-[#14161B] active:opacity-[0.88]" : "border border-[#E4E6EA] bg-white active:bg-[#F4F5F7]"
       }`}

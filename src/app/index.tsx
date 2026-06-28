@@ -1,15 +1,22 @@
+import { LinearGradient } from "expo-linear-gradient";
+import { router } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 import { Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { LinearGradient } from "expo-linear-gradient";
-import { StatusBar } from "expo-status-bar";
-import { router } from "expo-router";
 import Svg, { Circle, Path } from "react-native-svg";
 
 import AnimatedSun from "@/components/AnimatedSun";
 
 function LocationPin() {
   return (
-    <Svg width={13} height={13} viewBox="0 0 24 24" fill="none" stroke="#6E727B" strokeWidth={2.2}>
+    <Svg
+      width={13}
+      height={13}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#6E727B"
+      strokeWidth={2.2}
+    >
       <Path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z" />
       <Circle cx={12} cy={10} r={2.4} />
     </Svg>
@@ -20,7 +27,9 @@ function StatTile({ label, value }: { label: string; value: string }) {
   return (
     <View className="flex-1 rounded-2xl bg-[#F4F5F7] px-3.5 py-3">
       <Text className="text-xs font-medium text-[#9aa0a8]">{label}</Text>
-      <Text className="mt-0.5 text-[17px] font-bold tracking-tight text-[#14161B]">{value}</Text>
+      <Text className="mt-0.5 text-[17px] font-bold tracking-tight text-[#14161B]">
+        {value}
+      </Text>
     </View>
   );
 }
@@ -53,19 +62,27 @@ export default function Index() {
             <View className="flex-row items-center justify-between">
               <View className="flex-row items-center gap-1.5">
                 <LocationPin />
-                <Text className="text-[13.5px] font-medium text-[#6E727B]">Austin, TX</Text>
+                <Text className="text-[13.5px] font-medium text-[#6E727B]">
+                  Austin, TX
+                </Text>
               </View>
-              <Text className="text-[13.5px] font-medium text-[#9aa0a8]">Now · 1:20 PM</Text>
+              <Text className="text-[13.5px] font-medium text-[#9aa0a8]">
+                Now · 1:20 PM
+              </Text>
             </View>
 
             <View className="mt-3.5 flex-row items-baseline gap-2.5">
-              <Text className="text-[60px] font-bold leading-[54px] tracking-tighter text-[#14161B]">7</Text>
+              <Text className="text-[60px] font-bold leading-[54px] tracking-tighter text-[#14161B]">
+                7
+              </Text>
               <View className="gap-0.5">
                 <Text className="text-[13px] font-semibold uppercase tracking-wide text-[#9aa0a8]">
                   UV Index
                 </Text>
                 <View className="self-start rounded-lg bg-[#fbeed9] px-2.5 py-0.5">
-                  <Text className="text-[13px] font-semibold text-[#E2912A]">High</Text>
+                  <Text className="text-[13px] font-semibold text-[#E2912A]">
+                    High
+                  </Text>
                 </View>
               </View>
             </View>
@@ -94,9 +111,15 @@ export default function Index() {
               />
             </View>
             <View className="mt-[7px] flex-row justify-between">
-              <Text className="text-[11.5px] font-medium text-[#b6bac1]">Low</Text>
-              <Text className="text-[11.5px] font-medium text-[#b6bac1]">Moderate</Text>
-              <Text className="text-[11.5px] font-medium text-[#b6bac1]">Very high</Text>
+              <Text className="text-[11.5px] font-medium text-[#b6bac1]">
+                Low
+              </Text>
+              <Text className="text-[11.5px] font-medium text-[#b6bac1]">
+                Moderate
+              </Text>
+              <Text className="text-[11.5px] font-medium text-[#b6bac1]">
+                Very High
+              </Text>
             </View>
 
             <View className="mt-5 flex-row gap-2.5">
@@ -114,11 +137,14 @@ export default function Index() {
               className="h-[54px] w-full items-center justify-center rounded-2xl bg-[#14161B] active:opacity-[0.88]"
               onPress={() => router.push("/sign-up")}
             >
-              <Text className="text-[17px] font-semibold tracking-tight text-white">Get Started</Text>
+              <Text className="text-[17px] font-semibold tracking-tight text-white">
+                Get Started
+              </Text>
             </Pressable>
             <Pressable onPress={() => router.push("/log-in")}>
               <Text className="text-[14.5px] text-[#6E727B]">
-                Already have an account? <Text className="font-semibold text-[#14161B]">Sign In</Text>
+                Already have an account?{" "}
+                <Text className="font-semibold text-[#14161B]">Sign In</Text>
               </Text>
             </Pressable>
           </View>
