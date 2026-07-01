@@ -5,7 +5,7 @@ import { Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Svg, { Circle, Path } from "react-native-svg";
 
-import AnimatedSun from "@/components/AnimatedSun";
+import AnimatedLogo from "@/components/AnimatedLogo";
 
 function LocationPin() {
   return (
@@ -40,12 +40,9 @@ export default function Index() {
       <StatusBar style="dark" />
       <SafeAreaView className="flex-1">
         <View className="flex-1 justify-between px-7 pb-6 pt-8">
-          {/* Animated sun hero */}
-          <View className="items-center">
-            <AnimatedSun />
-            <Text className="mt-2.5 text-center text-3xl font-bold leading-9 tracking-tight text-[#14161B]">
-              Welcome to Sunny
-            </Text>
+          {/* Animated logo hero */}
+          <View className="items-center pt-14">
+            <AnimatedLogo />
           </View>
 
           {/* Glanceable preview card */}

@@ -1,0 +1,21 @@
+Pod::Spec.new do |s|
+  s.name           = 'Weatherkit'
+  s.version        = '1.0.0'
+  s.summary        = 'Apple WeatherKit UV bridge for Sunny'
+  s.description    = 'Exposes current and hourly UV index from Apple WeatherKit to JavaScript.'
+  s.author         = ''
+  s.homepage       = 'https://docs.expo.dev/modules/'
+  s.platforms      = { :ios => '16.4' }
+  s.source         = { git: '' }
+  s.static_framework = true
+
+  s.dependency 'ExpoModulesCore'
+  s.weak_framework = 'WeatherKit'
+
+  s.pod_target_xcconfig = {
+    'DEFINES_MODULE' => 'YES',
+    'SWIFT_COMPILATION_MODE' => 'wholemodule'
+  }
+
+  s.source_files = "**/*.{h,m,mm,swift,hpp,cpp}"
+end

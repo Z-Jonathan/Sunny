@@ -1,16 +1,18 @@
+import { StatusBar } from "expo-status-bar";
+import { router } from "expo-router";
 import { useEffect, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { StatusBar } from "expo-status-bar";
-import { router } from "expo-router";
 
 import { supabase } from "@/lib/supabase";
 
-export default function Home() {
+export default function Profile() {
   const [email, setEmail] = useState<string | null>(null);
 
   useEffect(() => {
-    supabase.auth.getUser().then(({ data }) => setEmail(data.user?.email ?? null));
+    supabase.auth
+      .getUser()
+      .then(({ data }) => setEmail(data.user?.email ?? null));
   }, []);
 
   async function handleSignOut() {
@@ -21,14 +23,14 @@ export default function Home() {
   return (
     <View className="flex-1 bg-[#F7F8FA]">
       <StatusBar style="dark" />
-      <SafeAreaView className="flex-1">
-        <View className="flex-1 justify-between px-7 pb-6 pt-8">
-          <View className="mt-10 items-center">
-            <Text className="text-center text-3xl font-bold tracking-tight text-[#14161B]">
-              You&apos;re in ☀️
+      <SafeAreaView className="flex-1 px-7" edges={["top"]}>
+        <View className="flex-1 justify-between pb-[130px] pt-8">
+          <View className="items-center">
+            <Text className="text-2xl font-bold tracking-tight text-[#14161B]">
+              Profile
             </Text>
             {email ? (
-              <Text className="mt-2 text-center text-[15.5px] text-[#6E727B]">
+              <Text className="mt-2 text-center text-[15px] text-[#6E727B]">
                 Signed in as {email}
               </Text>
             ) : null}
@@ -38,7 +40,9 @@ export default function Home() {
             onPress={handleSignOut}
             className="h-[54px] w-full items-center justify-center rounded-2xl bg-[#14161B] active:opacity-[0.88]"
           >
-            <Text className="text-[17px] font-semibold tracking-tight text-white">Sign Out</Text>
+            <Text className="text-[17px] font-semibold tracking-tight text-white">
+              Sign Out
+            </Text>
           </Pressable>
         </View>
       </SafeAreaView>
