@@ -155,6 +155,76 @@ export function AlertCircleIcon({ color = "#E2912A", size = 16 }: { color?: stri
   );
 }
 
+/** Generic single-path stroked icon — used for routine recommendation + env chips. */
+export function PathIcon({
+  path,
+  color = "#14161B",
+  size = 16,
+  strokeWidth = 1.9,
+}: {
+  path: string;
+  color?: string;
+  size?: number;
+  strokeWidth?: number;
+}) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
+      <Path d={path} />
+    </Svg>
+  );
+}
+
+export function ShieldIcon({ color = "#F5B85C", size = 19 }: { color?: string; size?: number }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinejoin="round">
+      <Path d="M12 3.5 5 6.2v4.4c0 4 2.9 6.9 7 8 4.1-1.1 7-4 7-8V6.2L12 3.5Z" />
+    </Svg>
+  );
+}
+
+export function CheckIcon({ color = "#4FA85C", size = 17 }: { color?: string; size?: number }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round">
+      <Path d="M20 6 9 17l-5-5" />
+    </Svg>
+  );
+}
+
+export function ClockIcon({ color = "#9aa0a8", size = 14 }: { color?: string; size?: number }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+      <Circle cx={12} cy={12} r={9} />
+      <Polyline points="12 7 12 12 15.5 13.5" />
+    </Svg>
+  );
+}
+
+export function PlusIcon({ color = "#14161B", size = 17 }: { color?: string; size?: number }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2.4} strokeLinecap="round">
+      <Line x1={12} y1={5} x2={12} y2={19} />
+      <Line x1={5} y1={12} x2={19} y2={12} />
+    </Svg>
+  );
+}
+
+export function MinusIcon({ color = "#14161B", size = 17 }: { color?: string; size?: number }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2.4} strokeLinecap="round">
+      <Line x1={5} y1={12} x2={19} y2={12} />
+    </Svg>
+  );
+}
+
+export function CloseIcon({ color = "#6E727B", size = 17 }: { color?: string; size?: number }) {
+  return (
+    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2.2} strokeLinecap="round">
+      <Line x1={6} y1={6} x2={18} y2={18} />
+      <Line x1={18} y1={6} x2={6} y2={18} />
+    </Svg>
+  );
+}
+
 export function UserIcon({ color = "#9aa0a8", size = 21 }: { color?: string; size?: number }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">

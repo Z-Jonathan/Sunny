@@ -160,7 +160,7 @@ export default function TabsLayout() {
           <TabButton icon={ActivityIcon} label="Forecast" />
         </TabTrigger>
         <TabTrigger name="calendar" href="/calendar" asChild>
-          <TabButton icon={CalendarIcon} label="Calendar" />
+          <TabButton icon={CalendarIcon} label="Routine" />
         </TabTrigger>
         <TabTrigger name="profile" href="/profile" asChild>
           <TabButton icon={UserIcon} label="Profile" />
